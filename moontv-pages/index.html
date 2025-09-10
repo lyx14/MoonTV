@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>MoonTV 测试</title>
-  <script src="static/js/app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoonTV</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <h1>欢迎来到 MoonTV</h1>
-  <img src="logo.png" alt="logo" width="200">
+  <div id="app"></div>
+
+  <script src="./main.js"></script>
+
+  <!-- 清理缓存按钮 -->
+  <button id="clear-cache-btn" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  ">
+    清理缓存
+  </button>
+
+  <script>
+  document.getElementById("clear-cache-btn").addEventListener("click", async () => {
+    try {
+      // 清空 LocalStorage 和 SessionStorage
+      localStorage.clear();
+      sessionStorage.clear();
+
+      // 清空 IndexedDB
+      if (window.indexedDB) {
+        const databases = await indexedDB.databases();
+        for (const db of databases) {
+          indexedDB.deleteDatabase(db.name);
+        }
+      }
+
+      // 清空 Cache Storage
+      if ('caches' in window) {
+        const names = await caches.keys();
+        for (const name of names) {
+          await caches.delete(name);
+        }
+      }
+
+      alert("缓存已清理，页面将重新加载！");
+      location.reload(true); // 强制刷新
+    } catch (e) {
+      console.error("清理缓存失败:", e);
+      alert("清理缓存失败，请手动清理！");
+    }
+  });
+  </script>
 </body>
 </html>
