@@ -1,34 +1,67 @@
 {
-  "sites": [
-    {
-      "key": "racktv",
-      "name": "🎬 聚合源 (CF加速)",
-      "type": 1,
-      "api": "https://racktv.lcylky520.dpdns.org",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
-    },
-    {
-      "key": "lzzy",
-      "name": "📺 极速多资源",
-      "type": 1,
-      "api": "https://api.lziapi.com/api.php/provide/vod/",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
+  "cache_time": 7200,
+  "api_fallback": {
+    "order": ["domestic", "oversea"],
+    "group": {
+      "domestic": [
+        {
+          "api": "https://api.360zy.com/api.php/provide/vod/",
+          "name": "360资源",
+          "detail": "国内大站，更新快，稳定"
+        },
+        {
+          "api": "https://caiji.kuaibozy.com/api.php/provide/vod/",
+          "name": "快播资源",
+          "detail": "速度快，老牌资源站"
+        },
+        {
+          "api": "https://baikanapi.com/api.php/provide/vod/",
+          "name": "百看资源",
+          "detail": "接口快，分类全"
+        },
+        {
+          "api": "https://cj.lziapi.com/api.php/provide/vod/",
+          "name": "量子采集",
+          "detail": "接口稳定，备用推荐"
+        },
+        {
+          "api": "https://www.apibdzy.com/api.php/provide/vod/",
+          "name": "八度资源",
+          "detail": "国内资源，速度较快"
+        },
+        {
+          "api": "https://www.6080yy3.com/api.php/provide/vod/",
+          "name": "6080资源",
+          "detail": "热门资源站，速度快"
+        }
+      ],
+      "oversea": [
+        {
+          "api": "https://api.zuidazy.net/api.php/provide/vod/",
+          "name": "最大资源",
+          "detail": "常用资源站，国内国外都有节点"
+        },
+        {
+          "api": "https://52zyapi.com/api.php/provide/vod/",
+          "name": "52资源",
+          "detail": "接口快，备用推荐"
+        },
+        {
+          "api": "https://www.200121.com/api.php/provide/vod/",
+          "name": "乐活资源",
+          "detail": "备用源"
+        },
+        {
+          "api": "https://api.leduozy.com/api.php/provide/vod/",
+          "name": "乐多资源",
+          "detail": "海外加速源"
+        },
+        {
+          "api": "https://api.maoyan10.com/api.php/provide/vod/",
+          "name": "猫眼资源",
+          "detail": "海外节点，兜底"
+        }
+      ]
     }
-  ],
-  "parses": [
-    {
-      "name": "解析1",
-      "type": 1,
-      "url": "https://jx.jsonplayer.com/player/?url="
-    },
-    {
-      "name": "解析2",
-      "type": 1,
-      "url": "https://jx.quankan.app/?url="
-    }
-  ]
+  }
 }
