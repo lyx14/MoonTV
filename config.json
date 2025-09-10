@@ -1,50 +1,34 @@
 {
-  "cache_time": 86400,
-  "api_site": {
-    "1080zyku": {
-      "api": "https://api.1080zyku.com/inc/api_mac10.php",
-      "name": "1080资源网",
-      "detail": "https://api.1080zyku.com"
+  "sites": [
+    {
+      "key": "racktv",
+      "name": "🎬 聚合源 (CF加速)",
+      "type": 1,
+      "api": "https://racktv.lcylky520.dpdns.org",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
     },
-    "zuidapi": {
-      "api": "https://api.zuidapi.com/api.php/provide/vod",
-      "name": "最大资源",
-      "detail": "https://api.zuidapi.com"
-    },
-    "ffzyapi": {
-      "api": "https://cj.ffzyapi.com/api.php/provide/vod",
-      "name": "非凡资源",
-      "detail": "https://cj.ffzyapi.com"
-    },
-    "lziapi": {
-      "api": "https://cj.lziapi.com/api.php/provide/vod",
-      "name": "量子资源",
-      "detail": "https://cj.lziapi.com"
-    },
-    "sdzyapi": {
-      "api": "https://sdzyapi.com/api.php/provide/vod",
-      "name": "闪电资源",
-      "detail": "https://sdzyapi.com"
-    },
-    "jyzyapi": {
-      "api": "https://jyzyapi.com/provide/vod",
-      "name": "金鹰资源",
-      "detail": "https://jyzyapi.com"
-    },
-    "jszyapi": {
-      "api": "https://jszyapi.com/api.php/provide/vod",
-      "name": "极速资源",
-      "detail": "https://jszyapi.com"
-    },
-    "guangsuapi": {
-      "api": "https://api.guangsuapi.com/api.php/provide/vod",
-      "name": "光速资源",
-      "detail": "https://api.guangsuapi.com"
-    },
-    "wolongzyw": {
-      "api": "https://collect.wolongzyw.com/api.php/provide/vod",
-      "name": "卧龙资源",
-      "detail": "https://collect.wolongzyw.com"
+    {
+      "key": "lzzy",
+      "name": "📺 极速多资源",
+      "type": 1,
+      "api": "https://api.lziapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
     }
-  }
+  ],
+  "parses": [
+    {
+      "name": "解析1",
+      "type": 1,
+      "url": "https://jx.jsonplayer.com/player/?url="
+    },
+    {
+      "name": "解析2",
+      "type": 1,
+      "url": "https://jx.quankan.app/?url="
+    }
+  ]
 }
